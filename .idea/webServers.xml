@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="9cb30259-1680-4717-bc99-0943ed9c3028" name="chaossquare_inz" url="http://inz.chaossquare.com/">
+        <fileTransfer host="futurehost.pl" port="21" rootFolder="/domains/chaossquare.com/public_html/inz" password="df9bdf9edf9ddfcbdf98df9fdf92dfe8df99df9cdf93dfc9dfe9" username="chaossquare">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
