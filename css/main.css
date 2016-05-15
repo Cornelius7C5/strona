@@ -9,7 +9,7 @@
     background: #FFF;
     color: #2056ac;
     border-radius: 0px 0px 7px 7px;
-    width: 10%;
+    max-width: 10%;
     border:3px solid white;
     border-top: 3px solid #2056ac;
 }

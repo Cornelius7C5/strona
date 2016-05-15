@@ -45,10 +45,6 @@ function login($email, $password, $mysqli)
         $stmt->fetch();
         $_SESSION['loggedIn'] = false;
         if ($stmt->num_rows == 1) {
-            // If the user exists we check if the account is locked
-            // from too many login attempts
-
-
             // Check if the password in the database matches
             // the password the user submitted. We are using
             // the password_verify function to avoid timing attacks.
@@ -68,47 +64,18 @@ function login($email, $password, $mysqli)
                     $db_password . $user_browser);
                 // Login successful.
                 $_SESSION['loggedIn'] = true;
-                return 'in';
+                return true;
             } else {
                 // Password is not correct
                 // We record this attempt in the database
                 $now = time();
                 $mysqli->query("INSERT INTO login_attempts(user_id, time)
                                     VALUES ('$user_id', '$now')");
-                return 'wrong password with:'.$password.'|'.$db_password;
+                return 'wrong password with:' . $password . '|' . $db_password;
             }
-
         } else {
             // No user exists.
             return 'no user';
-        }
-    }
-}
-
-function checkbrute($user_id, $mysqli)
-{
-    // Get timestamp of current time
-    $now = time();
-
-    // All login attempts are counted from the past 2 hours.
-    $valid_attempts = $now - (2 * 60 * 60);
-
-    if ($stmt = $mysqli->prepare("SELECT time
-                             FROM login_attempts
-                             WHERE user_id = ?
-                            AND time > '$valid_attempts'")
-    ) {
-        $stmt->bind_param('i', $user_id);
-
-        // Execute the prepared query.
-        $stmt->execute();
-        $stmt->store_result();
-
-        // If there have been more than 5 failed logins
-        if ($stmt->num_rows > 5) {
-            return true;
-        } else {
-            return false;
         }
     }
 }
@@ -142,7 +109,7 @@ function login_check($mysqli)
                 $stmt->fetch();
                 $login_check = hash('sha512', $password . $user_browser);
 
-                if (hash_equals($login_check, $login_string)) {
+                if ($login_check === $login_string) {
                     // Logged In!!!!
                     return true;
                 } else {

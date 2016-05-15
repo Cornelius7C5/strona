@@ -17,13 +17,14 @@ if ( $log == true) {
     <?php
     $title = 'Pomoc w afazji: Strona Główna';
     include_once('includes/html-head.php') ?>
+    <script type="text/javascript" src="/js/sha512.js"></script>
     <script src="js/forms.js" type="text/javascript"></script>
 </head>
 <body>
 <?php
 include_once('includes/menu-header.php');
 if (isset($_GET['error'])) {
-    echo '<p class="error">Error Logging In!</p>';
+    echo "<p class=\"error\">Error Logging In!</p>";
 }
 ?>
 
@@ -51,9 +52,9 @@ if (isset($_GET['error'])) {
             <br>
 
             <?php if (login_check($mysqli) == true) { ?>
-                <p>Akualnie zalogowany jako <?php echo htmlentities($_SESSION['username']) ?>.</p>';
+                <p>Akualnie zalogowany jako <?php echo htmlentities($_SESSION['username']) ?>.</p>
 
-                <p>Chcesz zmienić użytkownika? <a href="includes/logout.php">Wyloguj</a>.</p>';
+                <p>Chcesz zmienić użytkownika? <a href="logout.php">Wyloguj</a>.</p>
             <?php } else { ?>
                 <p>Aktualnie <?php echo $logged ?>logowany.</p>
                 <p>Jeśli jeszcze nie masz konta <a href='register.php'>zarejestruj się</a></p>
