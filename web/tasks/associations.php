@@ -13,7 +13,7 @@ Released   : 20140322
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <?php
-    $title = 'Stron w budowie';
+    $title = 'Skojarzenia';
     include_once('includes/html-head.php') ?>
 </head>
 <body>
@@ -26,7 +26,7 @@ include_once('includes/menu-header.php')
     <div id="welcome" class="container">
 
         <div class="title">
-            <h2>Strona w budowie</h2>
+            <h2>Skojarzenia</h2>
         </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, impedit, repudiandae, cumque, quisquam
             aperiam asperiores fugit aspernatur error id libero consectetur debitis. Molestiae, harum voluptas id porro

@@ -13,7 +13,7 @@ Released   : 20140322
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <?php
-    $title = 'Stron w budowie';
+    $title = 'Ćwiczenia';
     include_once('includes/html-head.php') ?>
 </head>
 <body>
@@ -26,14 +26,15 @@ include_once('includes/menu-header.php')
     <div id="welcome" class="container">
 
         <div class="title">
-            <h2>Strona w budowie</h2>
+            <table>
+                <tr>
+                    <td><a href="web/tasks/learning.php">Nauka</a></td>
+                    <td><a href="web/tasks/associations.php">Skojarzenia</a></td>
+                    <td><a href="web/tasks/fill.php">Uzupełnianie Zdań</a></td>
+                </tr>
+            </table>
         </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, impedit, repudiandae, cumque, quisquam
-            aperiam asperiores fugit aspernatur error id libero consectetur debitis. Molestiae, harum voluptas id porro
-            rem et mollitia dicta! Facere, in, praesentium. Rerum, ipsum, vitae eum repudiandae impedit et vel sequi at
-            unde assumenda quam nisi nostrum ab labore nihil eaque illo. Minus, nemo, corporis accusamus nisi est quidem
-            incidunt ut commodi reprehenderit non vel eos modi ratione qui perferendis dolore nostrum veritatis aperiam
-            eius harum magni ea.</p>
+
     </div>
 </div>
 <?php include_once('includes/footer.php') ?>

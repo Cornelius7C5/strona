@@ -13,7 +13,7 @@ Released   : 20140322
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <?php
-    $title = 'Stron w budowie';
+    $title = 'Strona w budowie';
     include_once('includes/html-head.php') ?>
 </head>
 <body>
