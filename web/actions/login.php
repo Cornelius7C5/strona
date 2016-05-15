@@ -18,7 +18,7 @@ if ( $log == true) {
     $title = 'Pomoc w afazji: Strona Główna';
     include_once('includes/html-head.php') ?>
     <script type="text/javascript" src="/js/sha512.js"></script>
-    <script src="js/forms.js" type="text/javascript"></script>
+    <script src="../../js/forms.js" type="text/javascript"></script>
 </head>
 <body>
 <?php
@@ -36,7 +36,7 @@ if (isset($_GET['error'])) {
             <h2>Zaloguj się</h2>
         </div>
         <div class=".center-block">
-            <form action="includes/process_login.php" method="post" name="login_form" id="login">
+            <form action="../../includes/process_login.php" method="post" name="login_form" id="login">
                 <div><label for="email">Email: </label> <input type="text" name="email" id="email"/></div>
 
                 <div><label for="password">Hasło: </label><input type="password" name="password" id="password"/>
@@ -57,7 +57,7 @@ if (isset($_GET['error'])) {
                 <p>Chcesz zmienić użytkownika? <a href="logout.php">Wyloguj</a>.</p>
             <?php } else { ?>
                 <p>Aktualnie <?php echo $logged ?>logowany.</p>
-                <p>Jeśli jeszcze nie masz konta <a href='register.php'>zarejestruj się</a></p>
+                <p>Jeśli jeszcze nie masz konta <a href='../../register.php'>zarejestruj się</a></p>
             <?php } ?></div>
     </div>
 </div>

@@ -4,7 +4,7 @@ Design by TEMPLATED
 http://templated.co
 Released for free under the Creative Commons Attribution License
 
-Name       : Undeviating
+Name       : Undeviating 
 Description: A two-column, fixed-width design with dark color scheme.
 Version    : 1.0
 Released   : 20140322
@@ -26,16 +26,17 @@ include_once('includes/menu-header.php')
     <div id="welcome" class="container">
 
         <div class="title">
-            <h2>Rejestracja powiodła się!</h2>
+            <h2>Strona w budowie</h2>
         </div>
-        <p>Możesz powrócić do <a href="login.php">strony logowania</a>, aby kontynuować użytkowanie strony.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, impedit, repudiandae, cumque, quisquam
+            aperiam asperiores fugit aspernatur error id libero consectetur debitis. Molestiae, harum voluptas id porro
+            rem et mollitia dicta! Facere, in, praesentium. Rerum, ipsum, vitae eum repudiandae impedit et vel sequi at
+            unde assumenda quam nisi nostrum ab labore nihil eaque illo. Minus, nemo, corporis accusamus nisi est quidem
+            incidunt ut commodi reprehenderit non vel eos modi ratione qui perferendis dolore nostrum veritatis aperiam
+            eius harum magni ea.</p>
     </div>
 </div>
 <?php include_once('includes/footer.php') ?>
 
 </body>
 </html>
-
-<h1>Registration successful!</h1>
-
-<p>You can now go back to the <a href="index.php">login page</a> and log in</p>
