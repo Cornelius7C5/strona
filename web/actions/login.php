@@ -1,5 +1,5 @@
 <?php
-include_once 'includes/functions.php';
+include_once '../../includes/functions.php';
 sec_session_start(); // Our custom secure way of starting a PHP session.
 
 $log = login_check($mysqli);
@@ -16,13 +16,13 @@ if ( $log == true) {
 <head>
     <?php
     $title = 'Pomoc w afazji: Strona Główna';
-    include_once('includes/html-head.php') ?>
+    include_once('../../includes/html-head.php') ?>
     <script type="text/javascript" src="/js/sha512.js"></script>
     <script src="../../js/forms.js" type="text/javascript"></script>
 </head>
 <body>
 <?php
-include_once('includes/menu-header.php');
+include_once('../../includes/menu-header.php');
 if (isset($_GET['error'])) {
     echo "<p class=\"error\">Error Logging In!</p>";
 }
@@ -62,6 +62,6 @@ if (isset($_GET['error'])) {
     </div>
 </div>
 </div>
-<?php include_once('includes/footer.php') ?>
+<?php include_once('../../includes/footer.php') ?>
 </body>
 </html>

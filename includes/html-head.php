@@ -4,11 +4,9 @@
 <meta name="description" content=""/>
 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial"
       rel="stylesheet"/>
-<link href="css/default.css" rel="stylesheet" type="text/css" media="all"/>
-<link href="css/fonts.css" rel="stylesheet" type="text/css" media="all"/>
-<link href="css/main.css" rel="stylesheet" type="text/css" media="all">
-<!--[if IE 6]>
-<link href="default_ie6.css" rel="stylesheet" type="text/css"/><![endif]-->
+<link href="/css/default.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="/css/fonts.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="/css/main.css" rel="stylesheet" type="text/css" media="all">
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">

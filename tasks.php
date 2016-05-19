@@ -18,7 +18,7 @@ Released   : 20140322
 </head>
 <body>
 <?php
-$inProgress = true;
+$tasks = true;
 include_once('includes/menu-header.php')
 ?>
 <div class="wrapper">
