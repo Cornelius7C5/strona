@@ -14,12 +14,12 @@ Released   : 20140322
 <head>
     <?php
     $title = 'Strona w budowie';
-    include_once('includes/html-head.php') ?>
+    include_once('../../includes/html-head.php') ?>
 </head>
 <body>
 <?php
 $inProgress = true;
-include_once('includes/menu-header.php')
+include_once('../../includes/menu-header.php')
 ?>
 <div class="wrapper">
     <div id="banner" class="container"></div>
@@ -28,15 +28,12 @@ include_once('includes/menu-header.php')
         <div class="title">
             <h2>Nauka</h2>
         </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, impedit, repudiandae, cumque, quisquam
-            aperiam asperiores fugit aspernatur error id libero consectetur debitis. Molestiae, harum voluptas id porro
-            rem et mollitia dicta! Facere, in, praesentium. Rerum, ipsum, vitae eum repudiandae impedit et vel sequi at
-            unde assumenda quam nisi nostrum ab labore nihil eaque illo. Minus, nemo, corporis accusamus nisi est quidem
-            incidunt ut commodi reprehenderit non vel eos modi ratione qui perferendis dolore nostrum veritatis aperiam
-            eius harum magni ea.</p>
+        <?
+         $categories = ['CZŁOWIEK','POJECIA OGÓLNE','ZDROWIE','ŻYWNOŚĆ I POSIŁKI']
+        ?>
     </div>
 </div>
-<?php include_once('includes/footer.php') ?>
+<?php include_once('../../includes/footer.php') ?>
 
 </body>
 </html>

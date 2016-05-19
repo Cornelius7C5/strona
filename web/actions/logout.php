@@ -1,5 +1,5 @@
 <?php
-include_once 'functions.php';
+include_once '../../includes/functions.php';
 
 // Unset all session values
 $_SESSION = array();

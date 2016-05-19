@@ -14,12 +14,12 @@ Released   : 20140322
 <head>
     <?php
     $title = 'Skojarzenia';
-    include_once('includes/html-head.php') ?>
+    include_once('../../includes/html-head.php') ?>
 </head>
 <body>
 <?php
 $inProgress = true;
-include_once('includes/menu-header.php')
+include_once('../../includes/menu-header.php')
 ?>
 <div class="wrapper">
     <div id="banner" class="container"></div>
@@ -36,7 +36,7 @@ include_once('includes/menu-header.php')
             eius harum magni ea.</p>
     </div>
 </div>
-<?php include_once('includes/footer.php') ?>
+<?php include_once('../../includes/footer.php') ?>
 
 </body>
 </html>
