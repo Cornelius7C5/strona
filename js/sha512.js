@@ -13,8 +13,6 @@
  */
 var hexcase = 0;
 /* hex output format. 0 - lowercase; 1 - uppercase        */
-var b64pad = "";
-/* base-64 pad character. "=" for strict RFC compliance   */
 
 /*
  * These are the functions you'll usually want to call
@@ -23,53 +21,12 @@ var b64pad = "";
 function hex_sha512(s) {
     return rstr2hex(rstr_sha512(str2rstr_utf8(s)));
 }
-function b64_sha512(s) {
-    return rstr2b64(rstr_sha512(str2rstr_utf8(s)));
-}
-function any_sha512(s, e) {
-    return rstr2any(rstr_sha512(str2rstr_utf8(s)), e);
-}
-function hex_hmac_sha512(k, d) {
-    return rstr2hex(rstr_hmac_sha512(str2rstr_utf8(k), str2rstr_utf8(d)));
-}
-function b64_hmac_sha512(k, d) {
-    return rstr2b64(rstr_hmac_sha512(str2rstr_utf8(k), str2rstr_utf8(d)));
-}
-function any_hmac_sha512(k, d, e) {
-    return rstr2any(rstr_hmac_sha512(str2rstr_utf8(k), str2rstr_utf8(d)), e);
-}
-
-/*
- * Perform a simple self-test to see if the VM is working
- */
-function sha512_vm_test() {
-    return hex_sha512("abc").toLowerCase() ==
-        "ddaf35a193617abacc417349ae20413112e6fa4e89a97ea20a9eeee64b55d39a" +
-        "2192992a274fc1a836ba3c23a3feebbd454d4423643ce80e2a9ac94fa54ca49f";
-}
 
 /*
  * Calculate the SHA-512 of a raw string
  */
 function rstr_sha512(s) {
     return binb2rstr(binb_sha512(rstr2binb(s), s.length * 8));
-}
-
-/*
- * Calculate the HMAC-SHA-512 of a key and some data (raw strings)
- */
-function rstr_hmac_sha512(key, data) {
-    var bkey = rstr2binb(key);
-    if (bkey.length > 32) bkey = binb_sha512(bkey, key.length * 8);
-
-    var ipad = Array(32), opad = Array(32);
-    for (var i = 0; i < 32; i++) {
-        ipad[i] = bkey[i] ^ 0x36363636;
-        opad[i] = bkey[i] ^ 0x5C5C5C5C;
-    }
-
-    var hash = binb_sha512(ipad.concat(rstr2binb(data)), 1024 + data.length * 8);
-    return binb2rstr(binb_sha512(opad.concat(hash), 1024 + 512));
 }
 
 /*
@@ -89,74 +46,6 @@ function rstr2hex(input) {
         output += hex_tab.charAt((x >>> 4) & 0x0F)
             + hex_tab.charAt(x & 0x0F);
     }
-    return output;
-}
-
-/*
- * Convert a raw string to a base-64 string
- */
-function rstr2b64(input) {
-    try {
-        b64pad
-    } catch (e) {
-        b64pad = '';
-    }
-    var tab = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
-    var output = "";
-    var len = input.length;
-    for (var i = 0; i < len; i += 3) {
-        var triplet = (input.charCodeAt(i) << 16)
-            | (i + 1 < len ? input.charCodeAt(i + 1) << 8 : 0)
-            | (i + 2 < len ? input.charCodeAt(i + 2) : 0);
-        for (var j = 0; j < 4; j++) {
-            if (i * 8 + j * 6 > input.length * 8) output += b64pad;
-            else output += tab.charAt((triplet >>> 6 * (3 - j)) & 0x3F);
-        }
-    }
-    return output;
-}
-
-/*
- * Convert a raw string to an arbitrary string encoding
- */
-function rstr2any(input, encoding) {
-    var divisor = encoding.length;
-    var i, j, q, x, quotient;
-
-    /* Convert to an array of 16-bit big-endian values, forming the dividend */
-    var dividend = Array(Math.ceil(input.length / 2));
-    for (i = 0; i < dividend.length; i++) {
-        dividend[i] = (input.charCodeAt(i * 2) << 8) | input.charCodeAt(i * 2 + 1);
-    }
-
-    /*
-     * Repeatedly perform a long division. The binary array forms the dividend,
-     * the length of the encoding is the divisor. Once computed, the quotient
-     * forms the dividend for the next step. All remainders are stored for later
-     * use.
-     */
-    var full_length = Math.ceil(input.length * 8 /
-        (Math.log(encoding.length) / Math.log(2)));
-    var remainders = Array(full_length);
-    for (j = 0; j < full_length; j++) {
-        quotient = Array();
-        x = 0;
-        for (i = 0; i < dividend.length; i++) {
-            x = (x << 16) + dividend[i];
-            q = Math.floor(x / divisor);
-            x -= q * divisor;
-            if (quotient.length > 0 || q > 0)
-                quotient[quotient.length] = q;
-        }
-        remainders[j] = x;
-        dividend = quotient;
-    }
-
-    /* Convert the remainders to the output string */
-    var output = "";
-    for (i = remainders.length - 1; i >= 0; i--)
-        output += encoding.charAt(remainders[i]);
-
     return output;
 }
 
@@ -198,33 +87,14 @@ function str2rstr_utf8(input) {
 }
 
 /*
- * Encode a string as utf-16
- */
-function str2rstr_utf16le(input) {
-    var output = "";
-    for (var i = 0; i < input.length; i++)
-        output += String.fromCharCode(input.charCodeAt(i) & 0xFF,
-            (input.charCodeAt(i) >>> 8) & 0xFF);
-    return output;
-}
-
-function str2rstr_utf16be(input) {
-    var output = "";
-    for (var i = 0; i < input.length; i++)
-        output += String.fromCharCode((input.charCodeAt(i) >>> 8) & 0xFF,
-            input.charCodeAt(i) & 0xFF);
-    return output;
-}
-
-/*
  * Convert a raw string to an array of big-endian words
  * Characters >255 have their high-byte silently ignored.
  */
 function rstr2binb(input) {
-    var output = Array(input.length >> 2);
+    var output = new Array(input.length >> 2);
     for (var i = 0; i < output.length; i++)
         output[i] = 0;
-    for (var i = 0; i < input.length * 8; i += 8)
+    for (i = 0; i < input.length * 8; i += 8)
         output[i >> 5] |= (input.charCodeAt(i / 8) & 0xFF) << (24 - i % 32);
     return output;
 }
@@ -246,8 +116,7 @@ var sha512_k;
 function binb_sha512(x, len) {
     if (sha512_k == undefined) {
         //SHA512 constants
-        sha512_k = new Array(
-            new int64(0x428a2f98, -685199838), new int64(0x71374491, 0x23ef65cd),
+        sha512_k = [new int64(0x428a2f98, -685199838), new int64(0x71374491, 0x23ef65cd),
             new int64(-1245643825, -330482897), new int64(-373957723, -2121671748),
             new int64(0x3956c25b, -213338824), new int64(0x59f111f1, -1241133031),
             new int64(-1841331548, -1357295717), new int64(-1424204075, -630357736),
@@ -286,19 +155,18 @@ function binb_sha512(x, len) {
             new int64(0x28db77f5, 0x23047d84), new int64(0x32caab7b, 0x40c72493),
             new int64(0x3c9ebe0a, 0x15c9bebc), new int64(0x431d67c4, -1676669620),
             new int64(0x4cc5d4be, -885112138), new int64(0x597f299c, -60457430),
-            new int64(0x5fcb6fab, 0x3ad6faec), new int64(0x6c44198c, 0x4a475817));
+            new int64(0x5fcb6fab, 0x3ad6faec), new int64(0x6c44198c, 0x4a475817)];
     }
 
     //Initial hash values
-    var H = new Array(
-        new int64(0x6a09e667, -205731576),
+    var H = [new int64(0x6a09e667, -205731576),
         new int64(-1150833019, -2067093701),
         new int64(0x3c6ef372, -23791573),
         new int64(-1521486534, 0x5f1d36f1),
         new int64(0x510e527f, -1377402159),
         new int64(-1694144372, 0x2b3e6c1f),
         new int64(0x1f83d9ab, -79577749),
-        new int64(0x5be0cd19, 0x137e2179));
+        new int64(0x5be0cd19, 0x137e2179)];
 
     var T1 = new int64(0, 0),
         T2 = new int64(0, 0),

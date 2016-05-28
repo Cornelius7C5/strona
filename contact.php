@@ -29,9 +29,8 @@ include_once('includes/menu-header.php')
 
             <h2>Kontakt </h2>
         </div>
-        <p>Jeśli masz uwagi dotyczące strony lub wyrażasz chęć nawiązania współpracy, skontaktuj się: <a
-                href="mailto:<a href=mailto:kontakt@pomocwafazji.com>kontakt@pomocwafazji.com</a>"><a
-                href=mailto:kontakt@pomocwafazji.com>kontakt@pomocwafazji.com</a></a></p>
+        <p>Jeśli masz uwagi dotyczące strony lub wyrażasz chęć nawiązania współpracy, skontaktuj się:
+            <a href=mailto:kontakt@pomocwafazji.com>kontakt@pomocwafazji.com</a></p>
     </div>
 </div>
 <?php include_once('includes/footer.php') ?>

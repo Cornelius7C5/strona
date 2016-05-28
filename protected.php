@@ -7,7 +7,7 @@ include_once 'includes/functions.php';
 <head>
     <meta charset="UTF-8">
     <title>Secure Login: Protected Page</title>
-    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
 <?php if (login_check($mysqli) == true) : ?>

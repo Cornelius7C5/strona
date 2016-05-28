@@ -41,6 +41,9 @@ function login($email, $password, $mysqli)
         $stmt->store_result();
 
         // get variables from result.
+        $user_id = null;
+        $db_password = null;
+        $username = null;
         $stmt->bind_result($user_id, $username, $db_password);
         $stmt->fetch();
         $_SESSION['loggedIn'] = false;
@@ -78,6 +81,7 @@ function login($email, $password, $mysqli)
             return 'no user';
         }
     }
+    return false;
 }
 
 function login_check($mysqli)
@@ -89,7 +93,6 @@ function login_check($mysqli)
 
         $user_id = $_SESSION['user_id'];
         $login_string = $_SESSION['login_string'];
-        $username = $_SESSION['username'];
 
         // Get the user-agent string of the user.
         $user_browser = $_SERVER['HTTP_USER_AGENT'];
@@ -105,6 +108,7 @@ function login_check($mysqli)
 
             if ($stmt->num_rows == 1) {
                 // If the user exists get variables from result.
+                $password = null;
                 $stmt->bind_result($password);
                 $stmt->fetch();
                 $login_check = hash('sha512', $password . $user_browser);

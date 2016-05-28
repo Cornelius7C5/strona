@@ -17,19 +17,19 @@
         ?>
 
         <div id="logo">
-            <span class="icon"><img src="images/logo.gif" width="90" height="90" alt=""/></span>
+            <span class="icon"><img src="/images/logo.gif" width="90" height="90" alt=""/></span>
 
             <h1><a href="#">POMOC W AFAZJI</a></h1>
         </div>
         <div id="menu">
             <ul>
-                <li class="<? echo $index ? 'active' : '' ?>"><a href="index.php" accesskey="1">Strona domowa</a></li>
-                <li class="<? echo $about ? 'active' : '' ?>"><a href="about.php" accesskey="2">O afazji</a></li>
-                <li class="<? echo $treatment ? 'active' : '' ?>"><a href="treatment.php" accesskey="3">Leczenie</a>
+                <li class="<? echo $index ? 'active' : '' ?>"><a href="/index.php" accesskey="1">Strona domowa</a></li>
+                <li class="<? echo $about ? 'active' : '' ?>"><a href="/about.php" accesskey="2">O afazji</a></li>
+                <li class="<? echo $treatment ? 'active' : '' ?>"><a href="/treatment.php" accesskey="3">Leczenie</a>
                 </li>
                 <li class="<? echo $tasks ? 'active' : '' ?>"><a href="/tasks.php" accesskey="4">Ćwiczenia</a>
                 </li>
-                <li class="<? echo $contact ? 'active' : '' ?>"><a href="contact.php" accesskey="5">Kontakt </a></li>
+                <li class="<? echo $contact ? 'active' : '' ?>"><a href="/contact.php" accesskey="5">Kontakt </a></li>
             </ul>
         </div>
     </div>

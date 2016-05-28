@@ -3,8 +3,8 @@ html, body {
 }
 
 body {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     background: #2056ac;
     font-family: 'Questrial', sans-serif;
     font-size: 12pt;
@@ -42,7 +42,7 @@ a:hover {
 }
 
 .container {
-    margin: 0px auto;
+    margin: 0 auto;
     width: 1200px;
 }
 
@@ -71,12 +71,11 @@ form textarea {
     position: relative;
     -webkit-appearance: none;
     display: block;
-    border: 0;
     background: #fff;
     background: rgba(255, 255, 255, 0.75);
     width: 100%;
     border-radius: 0.50em;
-    margin: 1em 0em;
+    margin: 1em 0;
     padding: 1.50em 1em;
     box-shadow: inset 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.05);
     border: solid 1px rgba(0, 0, 0, 0.15);
@@ -177,13 +176,13 @@ ul.style1 {
 
 ul.contact {
     margin: 0;
-    padding: 2em 0em 0em 0em;
+    padding: 2em 0 0 0;
     list-style: none;
 }
 
 ul.contact li {
     display: inline-block;
-    padding: 0em 0.10em;
+    padding: 0 0.10em;
     font-size: 1em;
 }
 
@@ -273,7 +272,7 @@ ul.contact li a:before {
 /*********************************************************************************/
 
 #logo {
-    padding: 8em 0em 4em 0em;
+    padding: 8em 0 4em 0;
 }
 
 #logo h1 {
@@ -308,7 +307,7 @@ ul.contact li a:before {
 
 #menu ul {
     display: inline-block;
-    padding: 0em 2em;
+    padding: 0 2em;
     text-align: center;
 }
 
@@ -318,7 +317,7 @@ ul.contact li a:before {
 
 #menu li a, #menu li span {
     display: inline-block;
-    padding: 0em 1.5em;
+    padding: 0 1.5em;
     text-decoration: none;
     font-size: 1.1em;
     font-weight: 600;
@@ -330,7 +329,7 @@ ul.contact li a:before {
 
 #menu li:hover a, #menu li.active a, #menu li.active span {
     background: #FFF;
-    border-radius: 7px 7px 0px 0px;
+    border-radius: 7px 7px 0 0;
     color: #2056ac;
 }
 
@@ -351,7 +350,7 @@ ul.contact li a:before {
 
 .wrapper {
     overflow: hidden;
-    padding: 0em 0em 5em 0em;
+    padding: 0 0 5em 0;
     background: #FFF;
 }
 
@@ -362,7 +361,7 @@ ul.contact li a:before {
 #wrapper2 {
     overflow: hidden;
     background: #F3F3F3;
-    padding: 5em 0em;
+    padding: 5em 0;
     text-align: center;
 }
 
@@ -379,15 +378,12 @@ ul.contact li a:before {
 #welcome {
     overflow: hidden;
     width: 1000px;
-    padding-top: 3em;
-    padding-right: 100px;
-    padding-left: 100px;
-    padding-bottom: 0em;
+    padding: 3em 100px 0;
     text-align: center;
 }
 
 #welcome .content {
-    padding: 0em 8em;
+    padding: 0 8em;
 }
 
 #welcome .title h2 {
@@ -406,7 +402,7 @@ ul.contact li a:before {
 #page-wrapper {
     overflow: hidden;
     background: #2F1E28;
-    padding: 3em 0em 6em 0em;
+    padding: 3em 0 6em 0;
     text-align: center;
 }
 
@@ -439,7 +435,7 @@ ul.contact li a:before {
 
 #footer {
     overflow: hidden;
-    padding: 5em 0em;
+    padding: 5em 0;
     background: #E3F0F7;
     text-align: center;
 }
@@ -449,7 +445,7 @@ ul.contact li a:before {
 #footer .fbox3 {
     float: left;
     width: 33%;
-    padding: 0px 40px 0px 40px;
+    padding: 0 40px 0 40px;
 }
 
 #footer .icon {
@@ -468,7 +464,7 @@ ul.contact li a:before {
 
 #copyright {
     overflow: hidden;
-    padding: 5em 0em;
+    padding: 5em 0;
     border-top: 20px solid rgba(255, 255, 255, 0.08);
     text-align: center;
     background-color: #2056ac;
@@ -491,7 +487,7 @@ ul.contact li a:before {
 
 #newsletter {
     overflow: hidden;
-    padding: 8em 0em;
+    padding: 8em 0;
     background: #EDEDED;
     text-align: center;
 }
@@ -502,7 +498,7 @@ ul.contact li a:before {
 
 #newsletter .content {
     width: 600px;
-    margin: 0px auto;
+    margin: 0 auto;
 }
 
 /*********************************************************************************/
@@ -566,7 +562,7 @@ ul.contact li a:before {
 }
 
 #three-column h2 {
-    margin: 1em 0em;
+    margin: 1em 0;
     font-size: 1.5em;
     font-weight: 700;
 }
@@ -574,7 +570,7 @@ ul.contact li a:before {
 #three-column .icon {
     position: relative;
     display: block;
-    margin: 0px auto 0.80em auto;
+    margin: 0 auto 0.80em auto;
     background: none;
     line-height: 150px;
     font-size: 4em;
@@ -615,13 +611,13 @@ ul.contact li a:before {
 
 ul.tools {
     margin: 0;
-    padding: 0em 0em 0em 0em;
+    padding: 0 0 0 0;
     list-style: none;
 }
 
 ul.tools li {
     display: inline-block;
-    padding: 0em .2em;
+    padding: 0 .2em;
     font-size: 4em;
 }
 

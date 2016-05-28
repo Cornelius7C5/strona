@@ -61,7 +61,6 @@ if (isset($_GET['error'])) {
             <?php } ?></div>
     </div>
 </div>
-</div>
 <?php include_once('../../includes/footer.php') ?>
 </body>
 </html>
