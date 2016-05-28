@@ -15,19 +15,6 @@ Released   : 20140322
     <?php
     $title = 'Ćwiczenia';
     include_once('includes/html-head.php') ?>
-
-    <style type="text/css">
-        table {
-            width: 100%;
-        }
-
-        table td {
-            width: 33%;
-            font-size: 1.1em;
-            text-align: center;
-
-        }
-    </style>
 </head>
 <body>
 <?php
@@ -35,18 +22,38 @@ $tasks = true;
 include_once('includes/menu-header.php')
 ?>
 <div class="wrapper">
-    <div id="banner" class="container">
-        <div class="title">
-            <table>
-                <tr>
-                    <td><a href="web/tasks/learning.php">Nauka</a></td>
-                    <td><a href="web/tasks/associations.php">Skojarzenia</a></td>
-                    <td><a href="web/tasks/fill.php">Uzupełnianie Zdań</a></td>
-                </tr>
-            </table>
-        </div>
-    </div>
     <div id="welcome" class="container">
+        <?
+        if (login_check($mysqli) == true) {
+            $sql = "SELECT * FROM `categories` ORDER BY name ASC";
+            $result = $mysqli->query($sql);
+
+            echo '<ol class="categories">';
+            while ($row = $result->fetch_assoc()) {
+                if (is_null($row['parent'])) {
+                    $subsql = "SELECT * FROM `categories` WHERE parent LIKE " . $row['id'] . " ORDER BY name ASC";
+                    $resultsub = $mysqli->query($subsql);
+                    echo "<li>" . $row['name'];
+                    echo '<ul class="sub-categories">';
+                    while ($sub = $resultsub->fetch_assoc()) {
+                        echo '<li class="subcategory">' . $sub['name'] . '</li>';
+                        echo '<li><a href="/web/tasks/learning.php?type=' . $sub['code'] . '">Nauka</a></li>';
+                        echo '<li><a href="/web/tasks/associations.php?type=' . $sub['code'] . '">Skojarzenia</a></li>';
+                        echo '<li><a href="/web/tasks/fill.php?type=' . $sub['code'] . '">Uzupełnianie</a></li>';
+                        echo '<li>&nbsp;</li>';
+                    }
+                    echo '</ul>';
+                    echo "</li>";
+
+                }
+            }
+            echo '</ol>';
+        }else {
+            ?>
+            <p>Zaloguj się lub zarejestruj aby korzystać z ćwiczeń.</p>
+            <?
+        }
+        ?>
 
 
     </div>

@@ -14,7 +14,8 @@ Released   : 20140322
 <head>
     <?php
     $title = 'Nauka';
-    include_once('../../includes/html-head.php') ?>
+    include_once('../../includes/html-head.php');
+    ?>
 </head>
 <body>
 <?php
@@ -25,12 +26,7 @@ include_once('../../includes/menu-header.php')
     <div id="banner" class="container"></div>
     <div id="welcome" class="container">
 
-        <div class="title">
-            <h2>Nauka</h2>
-        </div>
-        <?
-         $categories = ['CZŁOWIEK','POJECIA OGÓLNE','ZDROWIE','ŻYWNOŚĆ I POSIŁKI']
-        ?>
+
     </div>
 </div>
 <?php include_once('../../includes/footer.php') ?>
