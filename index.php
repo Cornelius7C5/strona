@@ -13,7 +13,7 @@ Released   : 20140322
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <?php
-$title = 'Pomoc w afazji: Strona Główna';
+$title = 'Strona Główna';
 include_once('includes/functions.php');
 sec_session_start(); // Our custom secure way of starting a PHP session.
 include_once('includes/html-head.php') ?>

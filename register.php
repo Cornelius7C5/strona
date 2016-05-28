@@ -22,6 +22,7 @@ Released   : 20140322
 </head>
 <body>
 <?php
+$title = 'Rejestracja';
 include_once('includes/menu-header.php');
 ?>
 <div class="wrapper">

@@ -15,6 +15,19 @@ Released   : 20140322
     <?php
     $title = 'Ćwiczenia';
     include_once('includes/html-head.php') ?>
+
+    <style type="text/css">
+        table {
+            width: 100%;
+        }
+
+        table td {
+            width: 33%;
+            font-size: 1.1em;
+            text-align: center;
+
+        }
+    </style>
 </head>
 <body>
 <?php
@@ -22,9 +35,7 @@ $tasks = true;
 include_once('includes/menu-header.php')
 ?>
 <div class="wrapper">
-    <div id="banner" class="container"></div>
-    <div id="welcome" class="container">
-
+    <div id="banner" class="container">
         <div class="title">
             <table>
                 <tr>
@@ -34,6 +45,9 @@ include_once('includes/menu-header.php')
                 </tr>
             </table>
         </div>
+    </div>
+    <div id="welcome" class="container">
+
 
     </div>
 </div>

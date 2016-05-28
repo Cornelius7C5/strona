@@ -1,5 +1,5 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<title><?echo $title?></title>
+<title><?echo $title?> - Pomoc w Afazji</title>
 <meta name="keywords" content=""/>
 <meta name="description" content=""/>
 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial"

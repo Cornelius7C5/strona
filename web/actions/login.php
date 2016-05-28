@@ -15,7 +15,7 @@ if ( $log == true) {
 <html>
 <head>
     <?php
-    $title = 'Pomoc w afazji: Strona Główna';
+    $title = 'Logowanie';
     include_once('../../includes/html-head.php') ?>
     <script type="text/javascript" src="/js/sha512.js"></script>
     <script src="../../js/forms.js" type="text/javascript"></script>
