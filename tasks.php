@@ -48,7 +48,7 @@ include_once('includes/menu-header.php')
                 }
             }
             echo '</ol>';
-        }else {
+        } else {
             ?>
             <p>Zaloguj się lub zarejestruj aby korzystać z ćwiczeń.</p>
             <?
