@@ -50,7 +50,7 @@ include_once('includes/menu-header.php')
             echo '</ol>';
         } else {
             ?>
-            <p>Zaloguj się lub zarejestruj aby korzystać z ćwiczeń.</p>
+            <p><a href="web/actions/login.php">Zaloguj się</a> lub <a href="web/actions/register.php">zarejestruj</a> aby korzystać z ćwiczeń.</p>
             <?
         }
         ?>

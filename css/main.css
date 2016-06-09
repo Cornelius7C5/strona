@@ -36,8 +36,16 @@ ul.sub-categories {
     padding-left: 20%;
 }
 
-.sub-categories li:not(.subcategory){
+.sub-categories li:not(.subcategory) {
     padding-left: 10%;
 }
 
-
+a div#logo, a div#logo:link,
+a div#logo:hover,
+a#logo-link:hover,
+a div#logo:visited,
+a div#logo:active
+{
+    color: white;
+    text-decoration: none !important;
+}

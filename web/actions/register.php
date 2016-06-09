@@ -68,7 +68,7 @@ include_once('includes/menu-header.php');
                 </div>
             </form>
         </div>
-        <p>Wróc do <a href="index.php">strony logowania</a>.</p>
+        <p>Wróc do <a href="../../index.php">strony logowania</a>.</p>
     </div>
 </div>
 <?php include_once('includes/footer.php') ?>

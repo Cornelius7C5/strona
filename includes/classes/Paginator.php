@@ -41,8 +41,6 @@ class Paginator
             $results[] = $row;
         }
 
-        echo $query.'<br>';
-
         $result = new stdClass();
         $result->page = $this->_page;
         $result->limit = $this->_limit;
@@ -66,25 +64,27 @@ class Paginator
         $html = '<ul class="' . $list_class . '">';
 
         $class = ($this->_page == 1) ? "disabled" : "";
-        $html .= '<li class="' . $class . '"><a href="?limit=' . $this->_limit . '&page=' . ($this->_page - 1) . '&'.$append.'">&laquo;</a></li>';
+        //previous
+        $html .= '<li class="' . $class . '"><a href="?limit=' . $this->_limit . '&page=' . ($this->_page-1) . '&'.$append.'">&laquo;</a></li>';
 
         if ($start > 1) {
-            $html .= '<li><a href="?limit=' . $this->_limit . '&page=0' . '$' . $append . '">1</a></li>';
+            $html .= '<li><a href="?limit=' . $this->_limit . '&page=1' . '&' . $append . '">1</a></li>';
             $html .= '<li class="disabled"><span>...</span></li>';
         }
 
         for ($i = $start; $i <= $end; $i++) {
             $class = ($this->_page == $i) ? "active" : "";
-            $html .= '<li class="' . $class . '"><a href="?limit=' . $this->_limit . '&page=' . ($i-1) . '&' . $append . '">' . $i . '</a></li>';
+            $html .= '<li class="' . $class . '"><a href="?limit=' . $this->_limit . '&page=' . ($i) . '&' . $append . '">' . $i . '</a></li>';
         }
 
         if ($end < $last) {
             $html .= '<li class="disabled"><span>...</span></li>';
-            $html .= '<li><a href="?limit=' . $this->_limit . '&page=' . ($last-1) .'&' . $append . '">' . $last . '</a></li>';
+            $html .= '<li><a href="?limit=' . $this->_limit . '&page=' . ($last) .'&' . $append . '">' . $last . '</a></li>';
         }
 
         $class = ($this->_page == $last) ? "disabled" : "";
-        $html .= '<li class="' . $class . '"><a href="?limit=' . $this->_limit . '&page=' . ($this->_page + 1) . '&' . $append . '">&raquo;</a></li>';
+        //next
+        $html .= '<li class="' . $class . '"><a href="?limit=' . $this->_limit . '&page=' . ($this->_page+1) . '&' . $append . '">&raquo;</a></li>';
 
         $html .= '</ul>';
 

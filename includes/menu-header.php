@@ -17,11 +17,14 @@
         }
         ?>
 
-        <div id="logo">
-            <span class="icon"><img src="/images/logo.gif" width="90" height="90" alt=""/></span>
+        <a href="/index.php" id="logo-link">
+            <div id="logo">
+                <span class="icon"><img src="/images/logo.gif" width="90" height="90" alt=""/></span>
 
-            <h1><a href="#">POMOC W AFAZJI</a></h1>
-        </div>
+                <h1>POMOC W AFAZJI</h1>
+            </div>
+        </a>
+
         <div id="menu">
             <ul>
                 <li class="<? echo $index ? 'active' : '' ?>"><a href="/index.php" accesskey="1">Strona domowa</a></li>

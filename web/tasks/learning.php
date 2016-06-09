@@ -32,15 +32,21 @@ include_once('../../includes/menu-header.php')
         include_once '../../includes/classes/Paginator.php';
 
 
-        $limit = (isset($_GET['limit'])) ? $_GET['limit'] : 5;
+        $limit = (isset($_GET['limit'])) ? $_GET['limit'] : 1;
         $page = (isset($_GET['page'])) ? $_GET['page'] : 1;
         $links = (isset($_GET['links'])) ? $_GET['links'] : 3;
         $query = "SELECT * FROM answers WHERE type LIKE '" . $_GET['type'] . "'";
 
         $Paginator = new Paginator($mysqli, $query);
 
-        $results = $Paginator->getData($page, $limit); ?>
-        <table>
+        $results = $Paginator->getData( $limit,$page); ?>
+        <table style="border: 1px black solid;">
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
             <?php for ($i = 0; $i < count($results->data); $i++) : ?>
                 <tr>
                     <td><?php echo $results->data[$i]['id']; ?></td>

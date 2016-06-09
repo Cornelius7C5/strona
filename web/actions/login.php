@@ -57,7 +57,7 @@ if (isset($_GET['error'])) {
                 <p>Chcesz zmienić użytkownika? <a href="logout.php">Wyloguj</a>.</p>
             <?php } else { ?>
                 <p>Aktualnie <?php echo $logged ?>logowany.</p>
-                <p>Jeśli jeszcze nie masz konta <a href='../../register.php'>zarejestruj się</a></p>
+                <p>Jeśli jeszcze nie masz konta <a href='register.php'>zarejestruj się</a></p>
             <?php } ?></div>
     </div>
 </div>
