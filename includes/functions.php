@@ -74,11 +74,11 @@ function login($email, $password, $mysqli)
                 $now = time();
                 $mysqli->query("INSERT INTO login_attempts(user_id, time)
                                     VALUES ('$user_id', '$now')");
-                return 'wrong password with:' . $password . '|' . $db_password;
+                return 1;
             }
         } else {
             // No user exists.
-            return 'no user';
+            return 2;
         }
     }
     return false;

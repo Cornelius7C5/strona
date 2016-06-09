@@ -19,20 +19,27 @@ Released   : 20140322
 <body>
 <?php
 $inProgress = true;
-include_once('../../includes/menu-header.php')
+include_once('../../includes/menu-header.php');
+if (isset($_GET['type'])) {
+    $typeSql = "SELECT name FROM categories WHERE code like '" . $_GET['type'] . "'";
+    $typeSelected = mysqli_fetch_assoc($mysqli->query($typeSql))['name'];
+}
 ?>
 <div class="wrapper">
-    <div id="banner" class="container"></div>
+    <div id="banner" class="container">
+        <h1>Skojarzenia: <? echo $typeSelected ?></h1>
+    </div>
     <div id="welcome" class="container">
 
-        <div class="title">
-            <h2>Skojarzenia</h2>
-        </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, impedit, repudiandae, cumque, quisquam
-            aperiam asperiores fugit aspernatur error id libero consectetur debitis. Molestiae, harum voluptas id porro
-            rem et mollitia dicta! Facere, in, praesentium. Rerum, ipsum, vitae eum repudiandae impedit et vel sequi at
-            unde assumenda quam nisi nostrum ab labore nihil eaque illo. Minus, nemo, corporis accusamus nisi est quidem
-            incidunt ut commodi reprehenderit non vel eos modi ratione qui perferendis dolore nostrum veritatis aperiam
+            aperiam asperiores fugit aspernatur error id libero consectetur debitis. Molestiae, harum voluptas id
+            porro
+            rem et mollitia dicta! Facere, in, praesentium. Rerum, ipsum, vitae eum repudiandae impedit et vel sequi
+            at
+            unde assumenda quam nisi nostrum ab labore nihil eaque illo. Minus, nemo, corporis accusamus nisi est
+            quidem
+            incidunt ut commodi reprehenderit non vel eos modi ratione qui perferendis dolore nostrum veritatis
+            aperiam
             eius harum magni ea.</p>
     </div>
 </div>

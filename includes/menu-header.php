@@ -8,12 +8,9 @@
         // Include database connection and functions here.  See 3.1.
 
         if (login_check($mysqli) == true) {
-            echo '<a href="../web/actions/logout.php"><div id="login_button">Wyloguj</div></a>';
+            echo '<a href="/web/actions/logout.php"><div id="login_button">Wyloguj</div></a>';
         } else {
-            echo '<a href="../web/actions/login.php"><div id="login_button">Zaloguj</div></a>';
-        }
-        if (isset($_GET['error'])) {
-            echo '<p class="error">Error Logging In!</p>';
+            echo '<a href="/web/actions/login.php"><div id="login_button">Zaloguj</div></a>';
         }
         ?>
 

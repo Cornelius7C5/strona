@@ -1,6 +1,6 @@
 <?php
-include_once 'includes/register.inc.php';
-include_once 'includes/functions.php';
+include_once '../../includes/register.inc.php';
+include_once '../../includes/functions.php';
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <!--
@@ -16,14 +16,14 @@ Released   : 20140322
 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <? include_once('includes/html-head.php') ?>
+    <? include_once('../../includes/html-head.php') ?>
     <script type="text/javascript" src="/js/sha512.js"></script>
     <script type="text/javascript" src="/js/forms.js"></script>
 </head>
 <body>
 <?php
 $title = 'Rejestracja';
-include_once('includes/menu-header.php');
+include_once('../../includes/menu-header.php');
 ?>
 <div class="wrapper">
     <div id="banner" class="container"></div>
@@ -71,6 +71,6 @@ include_once('includes/menu-header.php');
         <p>Wróc do <a href="../../index.php">strony logowania</a>.</p>
     </div>
 </div>
-<?php include_once('includes/footer.php') ?>
+<?php include_once('../../includes/footer.php') ?>
 </body>
 </html>

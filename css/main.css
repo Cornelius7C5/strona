@@ -49,3 +49,7 @@ a div#logo:active
     color: white;
     text-decoration: none !important;
 }
+
+#banner .bg-danger{
+    padding: 1em;
+}

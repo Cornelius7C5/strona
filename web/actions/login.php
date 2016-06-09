@@ -3,7 +3,7 @@ include_once '../../includes/functions.php';
 sec_session_start(); // Our custom secure way of starting a PHP session.
 
 $log = login_check($mysqli);
-if ( $log == true) {
+if ($log == true) {
     $logged = 'za';
 } else {
     $logged = 'wy';
@@ -23,13 +23,22 @@ if ( $log == true) {
 <body>
 <?php
 include_once('../../includes/menu-header.php');
-if (isset($_GET['error'])) {
-    echo "<p class=\"error\">Error Logging In!</p>";
-}
 ?>
 
 <div class="wrapper">
-    <div id="banner" class="container"></div>
+    <div id="banner" class="container">
+        <? if (isset($_GET['error'])) { ?>
+            <div class="bg-danger text-danger">Wystąpił błąd logowania:
+                <?
+                if (($_GET['error']) == 1) {
+                    ?>Błędne hasło.<?
+                } else {
+                    ?>Brak takiego użytkownika.<?
+                }
+                ?>
+            </div>
+        <? } ?>
+    </div>
     <div id="welcome" class="container">
 
         <div class="title">
