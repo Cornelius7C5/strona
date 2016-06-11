@@ -1,15 +1,4 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<!--
-Design by TEMPLATED
-http://templated.co
-Released for free under the Creative Commons Attribution License
-
-Name       : Undeviating 
-Description: A two-column, fixed-width design with dark color scheme.
-Version    : 1.0
-Released   : 20140322
-
--->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <?php
@@ -19,7 +8,6 @@ Released   : 20140322
 </head>
 <body>
 <?php
-$inProgress = true;
 include_once('../../includes/menu-header.php');
 $typeSql = "SELECT name FROM categories WHERE code like '".$_GET['type']."'";
 
@@ -44,7 +32,7 @@ $typeSelected = mysqli_fetch_assoc($mysqli->query($typeSql))['name'];
 
         $results = $Paginator->getData( $limit,$page); ?>
             <?php for ($i = 0; $i < count($results->data); $i++) : ?>
-                <img src="/images/db/<?php echo $results->data[$i]['pathUrl']; ?>" alt="Obrazek przedstawia <?php echo $results->data[$i]['text']; ?>"/>
+                <img src="/images/db/<?php echo $results->data[$i]['pathUrl']; ?>" alt="Na ilustracji jest <?php echo $results->data[$i]['text']; ?>"/>
                 <p><?php echo $results->data[$i]['text']; ?></p>
             <?php endfor; ?>
         <?php echo $Paginator->createLinks($links, 'pagination pagination-sm', 'type='.$_GET['type']); ?>

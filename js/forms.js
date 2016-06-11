@@ -22,7 +22,7 @@ function regFormHash(form, uid, email, password, conf) {
         password.value == '' ||
         conf.value == '') {
 
-        alert('You must provide all the requested details. Please try again');
+        alert('Proszę wypełnić wszystkie pola.');
         return false;
     }
 
@@ -39,14 +39,14 @@ function regFormHash(form, uid, email, password, conf) {
     // The check is duplicated below, but this is included to give more
     // specific guidance to the user
     if (password.value.length < 6) {
-        alert('Passwords must be at least 6 characters long.  Please try again');
+        alert('Hasło musi zawierać przynajmniej 6 znaków.');
         form.password.focus();
         return false;
     }
 
     // Check password and confirmation are the same
     if (password.value != conf.value) {
-        alert('Your password and confirmation do not match. Please try again');
+        alert('Hasło i powtórzone hasło nie są takie same.');
         form.password.focus();
         return false;
     }

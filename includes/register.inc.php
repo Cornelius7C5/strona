@@ -37,11 +37,11 @@ if (isset($_POST['username'], $_POST['email'], $_POST['p'])) {
 
         if ($stmt->num_rows == 1) {
             // A user with this email address already exists
-            $error_msg .= '<p class="error">Uzytkownik o podanym adresie e-mail już istnieje.</p>';
+            $error_msg .= '<p class="error">Użytkownik o podanym adresie e-mail już istnieje.</p>';
             $stmt->close();
         }
     } else {
-        $error_msg .= '<p class="error">Database error Line 39</p>';
+        $error_msg .= '<p class="error bg-danger">Wystąpił błąd</p>';
         $stmt->close();
     }
 
@@ -60,13 +60,9 @@ if (isset($_POST['username'], $_POST['email'], $_POST['p'])) {
             $stmt->close();
         }
     } else {
-        $error_msg .= '<p class="error">Database error line 55</p>';
+        $error_msg .= '<p class="error bg-danger">Wystąpił błąd</p>';
         $stmt->close();
     }
-
-    // We'll also have to account for the situation where the user doesn't have
-    // rights to do registration, by checking what type of user is attempting to
-    // perform the operation.
 
     if (empty($error_msg)) {
 

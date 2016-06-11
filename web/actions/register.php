@@ -48,7 +48,7 @@ include_once('../../includes/menu-header.php');
                 <div><label for="email">Email:</label>
                     <input type="text" name="email" id="email"/></div>
 
-                <div><label for="password">Hasło:</label>
+                <div><label for="password">Hasło (minimum 6 znaków):</label>
                     <input type="password" name="password" id="password"/></div>
 
                 <div><label for="confirmpwd">Powtórz hasło:</label>
@@ -68,6 +68,8 @@ include_once('../../includes/menu-header.php');
                 </div>
             </form>
         </div>
+
+        <br/>
         <p>Wróc do <a href="../../index.php">strony logowania</a>.</p>
     </div>
 </div>

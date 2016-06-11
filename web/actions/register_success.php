@@ -18,7 +18,6 @@ Released   : 20140322
 </head>
 <body>
 <?php
-$inProgress = true;
 include_once('../../includes/menu-header.php')
 ?>
 <div class="wrapper">
@@ -35,7 +34,3 @@ include_once('../../includes/menu-header.php')
 
 </body>
 </html>
-
-<h1>Registration successful!</h1>
-
-<p>You can now go back to the <a href="../../index.php">login page</a> and log in</p>

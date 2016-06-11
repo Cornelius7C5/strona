@@ -31,16 +31,7 @@ if (isset($_GET['type'])) {
     </div>
     <div id="welcome" class="container">
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, impedit, repudiandae, cumque, quisquam
-            aperiam asperiores fugit aspernatur error id libero consectetur debitis. Molestiae, harum voluptas id
-            porro
-            rem et mollitia dicta! Facere, in, praesentium. Rerum, ipsum, vitae eum repudiandae impedit et vel sequi
-            at
-            unde assumenda quam nisi nostrum ab labore nihil eaque illo. Minus, nemo, corporis accusamus nisi est
-            quidem
-            incidunt ut commodi reprehenderit non vel eos modi ratione qui perferendis dolore nostrum veritatis
-            aperiam
-            eius harum magni ea.</p>
+
     </div>
 </div>
 <?php include_once('../../includes/footer.php') ?>
