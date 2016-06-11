@@ -15,23 +15,13 @@ function formhash(form, password) {
     form.submit();
 }
 
-function regFormHash(form, uid, email, password, conf) {
+function regFormHash(form, email, password, conf) {
     // Check each field has a value
-    if (uid.value == '' ||
-        email.value == '' ||
+    if (email.value == '' ||
         password.value == '' ||
         conf.value == '') {
 
         alert('Proszę wypełnić wszystkie pola.');
-        return false;
-    }
-
-    // Check the username
-
-    var re = /^\w+$/;
-    if (!re.test(form.username.value)) {
-        alert("Username must contain only letters, numbers and underscores. Please try again");
-        form.username.focus();
         return false;
     }
 

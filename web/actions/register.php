@@ -42,9 +42,6 @@ include_once('../../includes/menu-header.php');
                   method="post"
                   name="registration_form"
                   id="registration_form">
-                <div><label for="username">Login:</label>
-                    <input type='text' name='username' id='username'/></div>
-
                 <div><label for="email">Email:</label>
                     <input type="text" name="email" id="email"/></div>
 
@@ -60,7 +57,6 @@ include_once('../../includes/menu-header.php');
                 <div>
                     <button type="button" class="btn btn-default" value="Register"
                             onclick="return regFormHash(this.form,
-                                   this.form.username,
                                    this.form.email,
                                    this.form.password,
                                    this.form.confirmpwd);">Zarejestruj
