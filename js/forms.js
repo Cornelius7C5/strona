@@ -7,7 +7,6 @@ function formhash(form, password) {
     p.name = "p";
     p.type = "hidden";
     p.value = hex_sha512(password.value);
-    console.log(p.value);
     // Make sure the plaintext password doesn't get sent. 
     password.value = "";
 

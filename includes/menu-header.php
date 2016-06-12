@@ -20,7 +20,6 @@
         <a href="/index.php" id="logo-link">
             <div id="logo">
                 <span class="icon"><img src="/images/logo.gif" width="90" height="90" alt=""/></span>
-
                 <h1>POMOC W AFAZJI</h1>
             </div>
         </a>

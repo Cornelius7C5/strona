@@ -1,11 +1,4 @@
 <?php
-
-/**
- * Created by PhpStorm.
- * User: Kitek
- * Date: 2016-05-30
- * Time: 15:30
- */
 class Paginator
 {
     private $_conn;

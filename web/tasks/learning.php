@@ -10,7 +10,6 @@
 <?php
 include_once('../../includes/menu-header.php');
 $typeSql = "SELECT name FROM categories WHERE code like '".$_GET['type']."'";
-
 $typeSelected = mysqli_fetch_assoc($mysqli->query($typeSql))['name'];
 ?>
 <div class="wrapper">
@@ -18,10 +17,7 @@ $typeSelected = mysqli_fetch_assoc($mysqli->query($typeSql))['name'];
     <div id="welcome" class="container">
         <?
         $sql = "SELECT * FROM answers WHERE type LIKE '" . $_GET['type'] . "'";
-
-
         include_once '../../includes/classes/Paginator.php';
-
 
         $limit = (isset($_GET['limit'])) ? $_GET['limit'] : 1;
         $page = (isset($_GET['page'])) ? $_GET['page'] : 1;
