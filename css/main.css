@@ -53,3 +53,15 @@ a div#logo:active
 #banner .bg-danger{
     padding: 1em;
 }
+
+body{
+    font-size: 16px !important;
+}
+
+.assoc{
+    padding-left: 40%;
+}
+#assocForm {
+    width: 35%;
+    margin: 0 auto;
+}

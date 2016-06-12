@@ -24,6 +24,8 @@ CREATE TABLE `answers` (
 `pathUrl` text NOT NULL,
 `text` text NOT NULL,
 `type` varchar(10) DEFAULT NULL,
+`assoc` text NOT NULL,
+`fill` text NOT NULL,
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 

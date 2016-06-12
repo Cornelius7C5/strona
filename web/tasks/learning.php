@@ -5,16 +5,23 @@
     $title = 'Nauka';
     include_once('../../includes/html-head.php');
     ?>
+    <script type="text/javascript">
+        <?php if ($_GET['hash']) { ?>
+        location.hash = <?php echo "'".$_GET['hash']."';";
+    } ?>
+    </script>
 </head>
 <body>
 <?php
+$tasks = true;
 include_once('../../includes/menu-header.php');
 $typeSql = "SELECT name FROM categories WHERE code like '".$_GET['type']."'";
 $typeSelected = mysqli_fetch_assoc($mysqli->query($typeSql))['name'];
 ?>
 <div class="wrapper">
-    <div id="banner" class="container"><h1><?echo $typeSelected?></h1></div>
+    <div id="banner" class="container"><h1><?echo $typeSelected?><a name="focus"></a></h1></div>
     <div id="welcome" class="container">
+
         <?
         $sql = "SELECT * FROM answers WHERE type LIKE '" . $_GET['type'] . "'";
         include_once '../../includes/classes/Paginator.php';
@@ -28,10 +35,10 @@ $typeSelected = mysqli_fetch_assoc($mysqli->query($typeSql))['name'];
 
         $results = $Paginator->getData( $limit,$page); ?>
             <?php for ($i = 0; $i < count($results->data); $i++) : ?>
-                <img src="/images/db/<?php echo $results->data[$i]['pathUrl']; ?>" alt="Na ilustracji jest <?php echo $results->data[$i]['text']; ?>"/>
-                <p><?php echo $results->data[$i]['text']; ?></p>
+                <img src="/images/db/<?php echo $results->data[$i]['pathUrl']; ?>" alt="Na ilustracji jest <?php echo $results->data[$i]['text']; ?>"/><br/>
+                <h3><?php echo $results->data[$i]['text']; ?></h3>
             <?php endfor; ?>
-        <?php echo $Paginator->createLinks($links, 'pagination pagination-sm', 'type='.$_GET['type']); ?>
+        <?php echo $Paginator->createLinks($links, 'pagination pagination-sm', 'type='.$_GET['type'].'&hash=focus'); ?>
     </div>
 </div>
 <?php include_once('../../includes/footer.php') ?>
